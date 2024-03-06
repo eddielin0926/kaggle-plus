@@ -1,0 +1,24 @@
+{
+  "name": "kaggle-plus",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "bun run build.ts"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "highcharts": "^11.4.0",
+    "jszip": "^3.10.1",
+    "papaparse": "^5.4.1"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/bun": "latest",
+    "@types/highcharts": "^7.0.0",
+    "@types/jszip": "^3.4.1",
+    "@types/papaparse": "^5.3.14"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
