@@ -1,8 +1,12 @@
 {
   "name": "kaggle-plus",
-  "module": "index.ts",
-  "type": "module",
+  "version": "0.1.0",
+  "description": "Kaggle Plus is a browser extension that visualizes the leaderboard of a Kaggle competition.",
+  "author": "Eddie Lin",
+  "license": "MIT",
+  "private": true,
   "scripts": {
+    "dev": "bun run build.ts --watch",
     "build": "bun run build.ts"
   },
   "dependencies": {
@@ -14,9 +18,12 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/bun": "latest",
+    "@types/chrome": "^0.0.262",
+    "@types/commander": "^2.12.2",
     "@types/highcharts": "^7.0.0",
     "@types/jszip": "^3.4.1",
-    "@types/papaparse": "^5.3.14"
+    "@types/papaparse": "^5.3.14",
+    "commander": "^12.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
