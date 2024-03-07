@@ -52,9 +52,7 @@ const calculateRankPercentage = (total: number, data: number[][]) => {
   return rankPercentages;
 };
 
-document.addEventListener("readystatechange", async (event) => {
-  if (document.readyState !== "complete") return;
-
+const createChart = async () => {
   // Find the download link element
   const downloadLinkElement = document.querySelector(
     'a[title="Download Leaderboard"]'
@@ -170,4 +168,6 @@ document.addEventListener("readystatechange", async (event) => {
   };
 
   const chart = Highcharts.chart(chartOptions);
-});
+};
+
+export default createChart;

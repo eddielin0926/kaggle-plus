@@ -25,6 +25,7 @@ const build = async (config: BuildConfig) => {
     await Bun.build({
       entrypoints: script.js.map((path) => `${config.sourcedir}/${path}`),
       outdir: `${config.outdir}`,
+      target: "browser",
     });
   });
 
