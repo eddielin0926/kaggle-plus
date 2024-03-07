@@ -30,3 +30,4 @@ jobs:
         with:
           files: kaggle-plus.zip
           draft: true
+          generate_release_notes: true
