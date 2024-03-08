@@ -102,7 +102,11 @@ const createChart = async () => {
   const rankPercentage = calculateRankPercentage(total, cumulativeScores); // Calculate rank percentage
 
   // Create a chart element
-  const anchorElement = document.querySelector("div.sc-fVZMuX.kdyPIO");
+  // #site-content > div:nth-child(2) > div > div > div.sc-jkQkMl.cIBmrk > div.sc-eXWLHQ.lnjqIn
+  // const anchorElement = document.querySelector("div.sc-fVZMuX.kdyPIO");
+  const anchorElement = document.querySelector(
+    "#site-content > div:nth-child(2) > div > div > div:nth-child(6) > div:nth-child(2)"
+  );
   if (!anchorElement) {
     console.error("Anchor element not found");
     return;
