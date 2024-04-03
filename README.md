@@ -2,6 +2,8 @@
 
 Kaggle Plus is a browser extension that visualizes the leaderboard of a Kaggle competition.
 
+![demo.gif](./docs/images/demo.gif)
+
 ## Installation
 
 1. Download the latest release from the releases page or build the extension yourself
