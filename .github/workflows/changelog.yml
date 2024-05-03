@@ -21,3 +21,4 @@ jobs:
           git-user-email: '41898282+github-actions[bot]@users.noreply.github.com'
           preset: 'conventionalcommits'
           input-file: 'CHANGELOG.md'
+          skip-ci: false
