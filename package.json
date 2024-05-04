@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@remusao/url-match-patterns": "^1.1.1",
-    "axios": "^1.6.7",
+    "axios": "^1.6.8",
     "highcharts": "^11.4.1",
     "jszip": "^3.10.1",
     "papaparse": "^5.4.1"
