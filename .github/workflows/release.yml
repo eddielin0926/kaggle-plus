@@ -1,31 +1,46 @@
 name: Release Kaggle Plus 🚀
 
 on:
-  push:
-    tags:
-      - "v*.*.*"
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  build:
+  changelog:
+    name: Update Changelog and Version
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Checkout
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Update Changelog and Version
+        uses: TriPSs/conventional-changelog-action@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          git-message: "chore(release): :bookmark: {version}"
+          git-user-name: "github-actions[bot]"
+          git-user-email: "41898282+github-actions[bot]@users.noreply.github.com"
+          preset: "conventionalcommits"
+          input-file: "CHANGELOG.md"
+          skip-ci: false
+  build:
+    name: Build and Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Code
         uses: actions/checkout@v4
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
-      - name: Install
+      - name: Install Dependencies
         run: bun install
-      - name: Build
+      - name: Build Extension
         run: bun run build
-      - name: Archive
+      - name: Archive Extension
         run: |
           mv dist kaggle-plus
           zip -r kaggle-plus.zip kaggle-plus
-      - name: Release
+      - name: Release Extension
         uses: softprops/action-gh-release@v1
         with:
           files: kaggle-plus.zip
