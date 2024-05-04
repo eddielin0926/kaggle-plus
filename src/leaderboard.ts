@@ -16,7 +16,7 @@ type Record = {
 const calcFrequency = (data: Record[]) => {
   const csvValues = data.map((d) => d.Score);
 
-  // csvalues is string array of numbers. ex ["0.1", "0.2", "0.3", ...]
+  // `csvValues` is string array of numbers. ex ["0.1", "0.2", "0.3", ...]
   // count the frequency of each score in bin of 0.0001
   const freq: any = {};
   csvValues.forEach((e) => {
@@ -88,22 +88,31 @@ const createChart = async () => {
   }
 
   // Parse the leaderboard data
-  const parsedData = Papa.parse(unzippedData, {
+  const parsedData: Papa.ParseResult<Record> = Papa.parse(unzippedData, {
     header: true,
     skipEmptyLines: true,
   });
+
+  // Check accuracy is 1 or 0
+  let isReversed = false;
+  if (parsedData.data.length >= 2) {
+    const firstScore = Number(parsedData.data[0].Score);
+    const lastScore = Number(parsedData.data[parsedData.data.length - 1].Score);
+    isReversed = firstScore < lastScore;
+  }
 
   // Calculate frequency of scores
   const scores = calcFrequency(parsedData.data as Record[]);
 
   const total = scores.reduce((acc, [_, count]) => acc + count, 0); // Calculate total count
-  const sortedScores = scores.sort((a, b) => a[0] - b[0]); // Sort scores
-  const cumulativeScores = calculateCumulative(sortedScores); // Calculate cumulative scores
-  const rankPercentage = calculateRankPercentage(total, cumulativeScores); // Calculate rank percentage
+  const sortedScores = scores.sort((a, b) => a[0] - b[0]);
+  const cumulativeScores = calculateCumulative(sortedScores);
+  const rankPercentage = calculateRankPercentage(
+    total,
+    isReversed ? cumulativeScores.reverse() : cumulativeScores
+  );
 
   // Create a chart element
-  // #site-content > div:nth-child(2) > div > div > div.sc-jkQkMl.cIBmrk > div.sc-eXWLHQ.lnjqIn
-  // const anchorElement = document.querySelector("div.sc-fVZMuX.kdyPIO");
   const anchorElement = document.querySelector(
     "#site-content > div:nth-child(2) > div > div > div:nth-child(6) > div:nth-child(2)"
   );
@@ -128,6 +137,7 @@ const createChart = async () => {
       title: {
         text: "Score",
       },
+      reversed: isReversed,
     },
     yAxis: {
       title: {
