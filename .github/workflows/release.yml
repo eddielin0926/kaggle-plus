@@ -23,6 +23,7 @@ jobs:
           input-file: "CHANGELOG.md"
           skip-ci: false
   build:
+    needs: changelog
     name: Build and Release
     runs-on: ubuntu-latest
     permissions:
@@ -41,7 +42,7 @@ jobs:
           mv dist kaggle-plus
           zip -r kaggle-plus.zip kaggle-plus
       - name: Release Extension
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: kaggle-plus.zip
           draft: true
