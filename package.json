@@ -19,7 +19,7 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/bun": "latest",
-    "@types/chrome": "^0.0.262",
+    "@types/chrome": "^0.0.267",
     "@types/commander": "^2.12.2",
     "@types/dom-navigation": "^1.0.3",
     "@types/highcharts": "^7.0.0",
