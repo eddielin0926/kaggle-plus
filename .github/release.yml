@@ -1,24 +1,18 @@
 changelog:
   exclude:
     labels:
-      - chore
-      - revert
       - ignore-for-release
     authors:
       - github-actions[bot]
   categories:
     - title: 🚀 Features
       labels:
-        - feat
+        - feature
     - title: 🐛 Bug Fixes
       labels:
-        - fix
+        - bugfix
     - title: 🧰 Maintenance
       labels:
         - refactor
         - test
-        - build
         - ci
-    - title: 🛠️ Other Changes
-      labels:
-        - "*"
