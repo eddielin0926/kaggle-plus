@@ -151,10 +151,10 @@ form-data@^4.0.0:
     combined-stream "^1.0.8"
     mime-types "^2.1.12"
 
-highcharts@*, highcharts@^11.4.0:
-  version "11.4.0"
-  resolved "https://registry.npmjs.org/highcharts/-/highcharts-11.4.0.tgz"
-  integrity sha512-f5POJz2WdHW6SNT4P2CoMjsgcX5F5sJXtdfWLQCaNP9JG0nG5TSGG7+A6vzHGzcDkTPM72EQbRQofNZHaRTUPg==
+highcharts@*, highcharts@^11.4.1:
+  version "11.4.1"
+  resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-11.4.1.tgz#e40e97c4ea61a10389da75bff0cdb8f83bdb57e1"
+  integrity sha512-t+BjB4hba5rNheczCrpyDz8BJrqGdgECHaaXQrgbf1mRdPMPemlOfo08/kTMgZ/Kp/Xfj015atdXpUFdwUU12Q==
 
 immediate@~3.0.5:
   version "3.0.6"
