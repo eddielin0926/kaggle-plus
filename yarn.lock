@@ -15,11 +15,11 @@
     axios "*"
 
 "@types/bun@latest":
-  version "1.0.8"
-  resolved "https://registry.npmjs.org/@types/bun/-/bun-1.0.8.tgz"
-  integrity sha512-E6UWZuN4ymAxzUBWVIGDHJ3Zey7I8cMzDZ+cB1BqhZsmd1uPb9iAQzpWMruY1mKzsuD3R+dZPoBkZz8QL1KhSA==
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@types/bun/-/bun-1.1.1.tgz#f3ec72c7645a267cae5684b14a0d107c9dc96e89"
+  integrity sha512-lUe9rLMhgDCViciZtgDj5CMl2u7uTq/IP149kSZH/Si6FWkCioximABFf+baRQgbm8QlH4bzT0qJRteQFNqeGA==
   dependencies:
-    bun-types "1.0.29"
+    bun-types "1.1.6"
 
 "@types/chrome@^0.0.267":
   version "0.0.267"
@@ -107,10 +107,10 @@ axios@*, axios@^1.6.7:
     form-data "^4.0.0"
     proxy-from-env "^1.1.0"
 
-bun-types@1.0.29:
-  version "1.0.29"
-  resolved "https://registry.npmjs.org/bun-types/-/bun-types-1.0.29.tgz"
-  integrity sha512-Z+U1ORr/2UCwxelIZxE83pyPLclviYL9UewQCNEUmGeLObY8ao+3WF3D8N1+NMv2+S+hUWsdBJam+4GoPEz35g==
+bun-types@1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/bun-types/-/bun-types-1.1.6.tgz#6d053b5d580ae3c4dcfc3a4870ceb19fcdc84333"
+  integrity sha512-LK2aaJdBBTUkDyN+kRiJHLF3VGrAcdkEHrbBvbmTkccShPw6ZalxxKjWSBJwn4UkikhZdrdA87bZWmfUgkRUYg==
   dependencies:
     "@types/node" "~20.11.3"
     "@types/ws" "~8.5.10"
