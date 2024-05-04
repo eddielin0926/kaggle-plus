@@ -4,10 +4,11 @@ import { watch } from "fs";
 import manifest from "./manifest";
 
 type BuildConfig = {
-  publicdir: string;
-  sourcedir: string;
-  outdir: string;
+  publicDir: string;
+  sourceDir: string;
+  outDir: string;
   manifest: chrome.runtime.Manifest;
+  sourceMap?: "none" | "inline" | "external";
 };
 
 const build = async (config: BuildConfig) => {
@@ -23,9 +24,10 @@ const build = async (config: BuildConfig) => {
       return;
     }
     await Bun.build({
-      entrypoints: script.js.map((path) => `${config.sourcedir}/${path}`),
-      outdir: `${config.outdir}`,
+      entrypoints: script.js.map((path) => `${config.sourceDir}/${path}`),
+      outdir: `${config.outDir}`,
       target: "browser",
+      sourcemap: config.sourceMap,
     });
   });
 
@@ -36,13 +38,13 @@ const build = async (config: BuildConfig) => {
     return;
   }
   Object.entries(icons).map(async ([size, path]) => {
-    const file = Bun.file(`${config.publicdir}/${path}`);
-    await Bun.write(`${config.outdir}/${path}`, file);
+    const file = Bun.file(`${config.publicDir}/${path}`);
+    await Bun.write(`${config.outDir}/${path}`, file);
   });
 
   // manifest.json
   await Bun.write(
-    `${config.outdir}/manifest.json`,
+    `${config.outDir}/manifest.json`,
     JSON.stringify(config.manifest)
   );
 };
@@ -59,9 +61,9 @@ program.parse(process.argv);
 const options = program.opts();
 
 const buildConfig: BuildConfig = {
-  publicdir: "public",
-  sourcedir: options.source,
-  outdir: options.out,
+  publicDir: "public",
+  sourceDir: options.source,
+  outDir: options.out,
   manifest: manifest,
 };
 
@@ -69,7 +71,7 @@ if (options.watch) {
   console.log("Watching for file changes");
   const watcher = watch("./src", { recursive: true }, (event, filename) => {
     console.log(`Detected ${event} in ${filename}`);
-    build(buildConfig);
+    build({ ...buildConfig, sourceMap: "inline" });
     console.log("Build complete");
   });
   process.on("SIGINT", () => {
