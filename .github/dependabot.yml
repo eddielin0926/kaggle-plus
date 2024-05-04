@@ -17,7 +17,7 @@ updates:
     commit-message:
       prefix: "build(deps)"
       prefix-development: "build(deps-dev)"
-      groups:
-        all:
-          patterns:
-            - "*"
+    groups:
+      all:
+        patterns:
+          - "*"
