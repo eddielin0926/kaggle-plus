@@ -4,6 +4,7 @@ changelog:
       - ignore-for-release
     authors:
       - github-actions[bot]
+      - dependabot[bot]
   categories:
     - title: 🚀 Features
       labels:
