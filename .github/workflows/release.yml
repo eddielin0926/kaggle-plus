@@ -9,10 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      version: ${{ steps.update.outputs.version }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
       - name: Update Changelog and Version
+        id: update
         uses: TriPSs/conventional-changelog-action@v5
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -47,5 +50,8 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: kaggle-plus.zip
-          draft: true
+          draft: false
+          tag_name: ${{ needs.changelog.outputs.version }}
+          name: ${{ needs.changelog.outputs.version }}
           generate_release_notes: true
+          make_latest: true
