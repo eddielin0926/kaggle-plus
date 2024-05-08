@@ -2,8 +2,8 @@ name: "Dependabot: Update bun.lockb 🤖"
 
 on:
   pull_request:
-    paths:
-      - "package.json"
+    branches:
+      - "dependabot/**"
 
 permissions:
   contents: write
