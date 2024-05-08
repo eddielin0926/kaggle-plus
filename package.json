@@ -1,6 +1,6 @@
 {
   "name": "kaggle-plus",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Kaggle Plus is a browser extension that visualizes the leaderboard of a Kaggle competition.",
   "author": "Eddie Lin",
   "license": "MIT",
