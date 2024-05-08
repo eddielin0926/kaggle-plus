@@ -11,7 +11,6 @@ const manifest: chrome.runtime.Manifest = {
     "48": "icons/icon-48.png",
     "128": "icons/icon-128.png",
   },
-  permissions: ["webNavigation"],
   content_scripts: [
     {
       run_at: "document_idle",
