@@ -15,11 +15,11 @@
     axios "*"
 
 "@types/bun@latest":
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/@types/bun/-/bun-1.1.1.tgz#f3ec72c7645a267cae5684b14a0d107c9dc96e89"
-  integrity sha512-lUe9rLMhgDCViciZtgDj5CMl2u7uTq/IP149kSZH/Si6FWkCioximABFf+baRQgbm8QlH4bzT0qJRteQFNqeGA==
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@types/bun/-/bun-1.1.2.tgz#586d342eb57693b602609f4e806eb3b80f6dae6a"
+  integrity sha512-pRBDD3EDqPf83qe95i3EpYu5G2J8bbb78a3736vnCm2K8YWtEE5cvJUq2jkKvJhW07YTfQtbImywIwRhWL8z3Q==
   dependencies:
-    bun-types "1.1.6"
+    bun-types "1.1.8"
 
 "@types/chrome@^0.0.268":
   version "0.0.268"
@@ -72,10 +72,17 @@
   dependencies:
     jszip "*"
 
-"@types/node@*", "@types/node@~20.11.3":
+"@types/node@*":
   version "20.11.24"
   resolved "https://registry.npmjs.org/@types/node/-/node-20.11.24.tgz"
   integrity sha512-Kza43ewS3xoLgCEpQrsT+xRo/EJej1y0kVYGiLFE1NEODXGzTfwiC6tXTLMQskn1X4/Rjlh0MQUvx9W+L9long==
+  dependencies:
+    undici-types "~5.26.4"
+
+"@types/node@~20.12.8":
+  version "20.12.12"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.12.12.tgz#7cbecdf902085cec634fdb362172dfe12b8f2050"
+  integrity sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==
   dependencies:
     undici-types "~5.26.4"
 
@@ -98,21 +105,21 @@ asynckit@^0.4.0:
   resolved "https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz"
   integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
 
-axios@*, axios@^1.6.8:
-  version "1.6.8"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.8.tgz#66d294951f5d988a00e87a0ffb955316a619ea66"
-  integrity sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==
+axios@*, axios@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.0.tgz#b48f715325457ededfcb3f0a44a3fb9d5742acb6"
+  integrity sha512-IiB0wQeKyPRdsFVhBgIo31FbzOyf2M6wYl7/NVutFwFBRMiAbjNiydJIHKeLmPugF4kJLfA1uWZ82Is2QzqqFA==
   dependencies:
     follow-redirects "^1.15.6"
     form-data "^4.0.0"
     proxy-from-env "^1.1.0"
 
-bun-types@1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/bun-types/-/bun-types-1.1.6.tgz#6d053b5d580ae3c4dcfc3a4870ceb19fcdc84333"
-  integrity sha512-LK2aaJdBBTUkDyN+kRiJHLF3VGrAcdkEHrbBvbmTkccShPw6ZalxxKjWSBJwn4UkikhZdrdA87bZWmfUgkRUYg==
+bun-types@1.1.8:
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/bun-types/-/bun-types-1.1.8.tgz#33690cd1b5632ba4d0d9a1a75cb59e9b05fb5ff7"
+  integrity sha512-dwhfuUKSGK8hm5Llcvb5+ejRh+4mIt8ibObJVKhZBsi0ScpXmt+AlaS1eDW6uRXCHj084Qt0kIqAJ08/7ZGC9Q==
   dependencies:
-    "@types/node" "~20.11.3"
+    "@types/node" "~20.12.8"
     "@types/ws" "~8.5.10"
 
 combined-stream@^1.0.8:
@@ -122,10 +129,10 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@*, commander@^12.0.0:
-  version "12.0.0"
-  resolved "https://registry.npmjs.org/commander/-/commander-12.0.0.tgz"
-  integrity sha512-MwVNWlYjDTtOjX5PiD7o5pK0UrFU/OYgcJfjjK4RaHZETNtjJqrZa9Y9ds88+A+f+d5lv+561eZ+yCKoS3gbAA==
+commander@*, commander@^12.1.0:
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-12.1.0.tgz#01423b36f501259fdaac4d0e4d60c96c991585d3"
+  integrity sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==
 
 core-util-is@~1.0.0:
   version "1.0.3"
