@@ -10,9 +10,9 @@
     "build": "bun run build.ts"
   },
   "dependencies": {
-    "@remusao/url-match-patterns": "^1.1.1",
+    "@remusao/url-match-patterns": "^1.2.0",
     "axios": "^1.7.2",
-    "highcharts": "^11.4.3",
+    "highcharts": "^11.4.6",
     "jszip": "^3.10.1",
     "papaparse": "^5.4.1"
   },
